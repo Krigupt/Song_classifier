@@ -1,0 +1,7 @@
+Flask
+spotipy
+pandas
+scikit-learn
+numpy
+scipy
+Flask-WTF
