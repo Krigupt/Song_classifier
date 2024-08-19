@@ -9,7 +9,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from collections import defaultdict
 from scipy.spatial.distance import cdist
 import numpy as np
-
+import os
 
 # load data using pandas
 music_data = pd.read_csv("data.csv")
@@ -129,4 +129,6 @@ def success():
     return render_template("success.html", songs=recommendations)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5200)
+    port = int(os.environ.get('PORT', 5001))
+    app.run(host='0.0.0.0', port=port)
+    
